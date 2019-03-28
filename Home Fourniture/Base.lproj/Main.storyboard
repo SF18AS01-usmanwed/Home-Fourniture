@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kno-ab-25i">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home Furniture-->
+        <scene sceneID="1bv-fz-6dE">
+            <objects>
+                <tableViewController id="d6e-i2-EQe" customClass="FurnitureTableViewController" customModule="Home_Fourniture" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WrU-lU-TVv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FurnitureCell" id="uyx-EJ-MqT">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uyx-EJ-MqT" id="VW5-ff-IW1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="j9U-zW-qxd" kind="show" identifier="ToFurnitureDetail" id="7ww-Wl-bAZ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="d6e-i2-EQe" id="PcU-bG-7jD"/>
+                            <outlet property="delegate" destination="d6e-i2-EQe" id="og0-kb-JDB"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Home Furniture" largeTitleDisplayMode="always" id="aM4-Na-vwP"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YqP-hZ-Prz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="282" y="56"/>
+        </scene>
+        <!--Furniture Detail View Controller-->
+        <scene sceneID="wQ0-hS-Iln">
+            <objects>
+                <viewController id="j9U-zW-qxd" customClass="FurnitureDetailViewController" customModule="Home_Fourniture" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bWn-0j-AIH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1d-aM-GHm">
+                                <rect key="frame" x="16" y="124" width="343" height="317"/>
+                                <color key="backgroundColor" red="1" green="0.1954887927" blue="0.13670022809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="f80-8D-kZs"/>
+                                    <constraint firstAttribute="height" constant="317" id="hCh-sj-MAT"/>
+                                </constraints>
+                                <state key="normal" title="Choose photo"/>
+                                <connections>
+                                    <action selector="choosePhotoButtonTapped:" destination="j9U-zW-qxd" eventType="touchUpInside" id="Z9x-vb-gmm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gS-3w-56B">
+                                <rect key="frame" x="36" y="492.5" width="92.5" height="21.5"/>
+                                <color key="backgroundColor" red="0.4701217654" green="0.73293895779999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y9T-xT-r0q">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="Xn1-fs-ZVE"/>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Furniture" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NO2-M4-mno">
+                                <rect key="frame" x="36" y="456" width="73" height="21.5"/>
+                                <color key="backgroundColor" red="0.35028714570000002" green="1" blue="0.26896988999999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NO2-M4-mno" firstAttribute="leading" secondItem="bWn-0j-AIH" secondAttribute="leadingMargin" constant="20" id="4i3-Cu-ilH"/>
+                            <constraint firstItem="NO2-M4-mno" firstAttribute="top" secondItem="f1d-aM-GHm" secondAttribute="bottom" constant="15" id="Ach-4t-Fvr"/>
+                            <constraint firstItem="f1d-aM-GHm" firstAttribute="top" secondItem="xiL-N5-yBO" secondAttribute="top" constant="8" id="OBo-UZ-LH0"/>
+                            <constraint firstItem="f1d-aM-GHm" firstAttribute="trailing" secondItem="bWn-0j-AIH" secondAttribute="trailingMargin" id="aIE-1F-u6m"/>
+                            <constraint firstItem="f1d-aM-GHm" firstAttribute="leading" secondItem="bWn-0j-AIH" secondAttribute="leadingMargin" id="eag-sN-Sfp"/>
+                            <constraint firstItem="4gS-3w-56B" firstAttribute="leading" secondItem="bWn-0j-AIH" secondAttribute="leadingMargin" constant="20" id="gLE-FA-GuP"/>
+                            <constraint firstItem="4gS-3w-56B" firstAttribute="top" secondItem="NO2-M4-mno" secondAttribute="bottom" constant="15" id="kR5-m2-8q2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xiL-N5-yBO"/>
+                    </view>
+                    <connections>
+                        <outlet property="choosePhotoButton" destination="f1d-aM-GHm" id="9Fx-D4-UTY"/>
+                        <outlet property="furnitureDescriptionLabel" destination="4gS-3w-56B" id="mnS-FX-gdK"/>
+                        <outlet property="furnitureTitleLabel" destination="NO2-M4-mno" id="sQq-8D-Frt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7UW-tx-4yg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1024.8" y="54.422788605697157"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aZQ-91-S0j">
+            <objects>
+                <navigationController id="Kno-ab-25i" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="P4i-iX-sqI">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="d6e-i2-EQe" kind="relationship" relationship="rootViewController" id="red-yn-FXa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xdu-Zj-LVM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-670" y="56"/>
+        </scene>
+    </scenes>
+</document>
